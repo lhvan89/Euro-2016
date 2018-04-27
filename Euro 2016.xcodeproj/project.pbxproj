@@ -8,20 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		6F57C933208FF8A800640680 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F57C932208FF8A800640680 /* AppDelegate.swift */; };
-		6F57C935208FF8A800640680 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F57C934208FF8A800640680 /* ViewController.swift */; };
+		6F57C935208FF8A800640680 /* TeamsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F57C934208FF8A800640680 /* TeamsViewController.swift */; };
 		6F57C938208FF8A800640680 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F57C936208FF8A800640680 /* Main.storyboard */; };
 		6F57C93A208FF8A800640680 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 6F57C939208FF8A800640680 /* Assets.xcassets */; };
 		6F57C93D208FF8A800640680 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6F57C93B208FF8A800640680 /* LaunchScreen.storyboard */; };
+		6F57C945208FF8F300640680 /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F57C944208FF8F300640680 /* Team.swift */; };
+		6F57C94820907EAE00640680 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6F57C94720907EAE00640680 /* GoogleService-Info.plist */; };
+		6F9086FF2090969D0036AE97 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F9086FE2090969D0036AE97 /* Match.swift */; };
+		6F908701209096C70036AE97 /* Flags.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F908700209096C70036AE97 /* Flags.swift */; };
+		E52BE9991FBCF42E9FCD9D9B /* Pods_Euro_2016.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2C023F5E3EF49E3D2B50E7B1 /* Pods_Euro_2016.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C023F5E3EF49E3D2B50E7B1 /* Pods_Euro_2016.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Euro_2016.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3D6BFD6B2383DE2FEE94897E /* Pods-Euro 2016.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Euro 2016.release.xcconfig"; path = "Pods/Target Support Files/Pods-Euro 2016/Pods-Euro 2016.release.xcconfig"; sourceTree = "<group>"; };
 		6F57C92F208FF8A800640680 /* Euro 2016.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Euro 2016.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		6F57C932208FF8A800640680 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		6F57C934208FF8A800640680 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		6F57C934208FF8A800640680 /* TeamsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamsViewController.swift; sourceTree = "<group>"; };
 		6F57C937208FF8A800640680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		6F57C939208FF8A800640680 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6F57C93C208FF8A800640680 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		6F57C93E208FF8A800640680 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6F57C944208FF8F300640680 /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
+		6F57C94720907EAE00640680 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		6F9086FE2090969D0036AE97 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		6F908700209096C70036AE97 /* Flags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Flags.swift; sourceTree = "<group>"; };
+		A4D9BEA7A6CF1C0A6F6C5D28 /* Pods-Euro 2016.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Euro 2016.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Euro 2016/Pods-Euro 2016.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E52BE9991FBCF42E9FCD9D9B /* Pods_Euro_2016.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -40,6 +53,8 @@
 			children = (
 				6F57C931208FF8A800640680 /* Euro 2016 */,
 				6F57C930208FF8A800640680 /* Products */,
+				FD35FD8EF1055EC684ACFC50 /* Pods */,
+				77F21374D114BCBF0B4E811A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -54,14 +69,51 @@
 		6F57C931208FF8A800640680 /* Euro 2016 */ = {
 			isa = PBXGroup;
 			children = (
+				6F9086FD2090965E0036AE97 /* Models */,
+				6F57C94620905BD100640680 /* Controllers */,
 				6F57C932208FF8A800640680 /* AppDelegate.swift */,
-				6F57C934208FF8A800640680 /* ViewController.swift */,
+				6F57C94720907EAE00640680 /* GoogleService-Info.plist */,
 				6F57C936208FF8A800640680 /* Main.storyboard */,
 				6F57C939208FF8A800640680 /* Assets.xcassets */,
 				6F57C93B208FF8A800640680 /* LaunchScreen.storyboard */,
 				6F57C93E208FF8A800640680 /* Info.plist */,
 			);
 			path = "Euro 2016";
+			sourceTree = "<group>";
+		};
+		6F57C94620905BD100640680 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				6F57C934208FF8A800640680 /* TeamsViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		6F9086FD2090965E0036AE97 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				6F57C944208FF8F300640680 /* Team.swift */,
+				6F9086FE2090969D0036AE97 /* Match.swift */,
+				6F908700209096C70036AE97 /* Flags.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		77F21374D114BCBF0B4E811A /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				2C023F5E3EF49E3D2B50E7B1 /* Pods_Euro_2016.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		FD35FD8EF1055EC684ACFC50 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4D9BEA7A6CF1C0A6F6C5D28 /* Pods-Euro 2016.debug.xcconfig */,
+				3D6BFD6B2383DE2FEE94897E /* Pods-Euro 2016.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -71,9 +123,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 6F57C941208FF8A800640680 /* Build configuration list for PBXNativeTarget "Euro 2016" */;
 			buildPhases = (
+				ABA8592E68146A7B454A71EB /* [CP] Check Pods Manifest.lock */,
 				6F57C92B208FF8A800640680 /* Sources */,
 				6F57C92C208FF8A800640680 /* Frameworks */,
 				6F57C92D208FF8A800640680 /* Resources */,
+				61F5369E174AE86A52080473 /* [CP] Embed Pods Frameworks */,
+				52F0CF9FF99649AB77DABA22 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -124,6 +179,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6F57C93D208FF8A800640680 /* LaunchScreen.storyboard in Resources */,
+				6F57C94820907EAE00640680 /* GoogleService-Info.plist in Resources */,
 				6F57C93A208FF8A800640680 /* Assets.xcassets in Resources */,
 				6F57C938208FF8A800640680 /* Main.storyboard in Resources */,
 			);
@@ -131,13 +187,74 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		52F0CF9FF99649AB77DABA22 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Euro 2016/Pods-Euro 2016-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		61F5369E174AE86A52080473 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Euro 2016/Pods-Euro 2016-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Euro 2016/Pods-Euro 2016-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ABA8592E68146A7B454A71EB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Euro 2016-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		6F57C92B208FF8A800640680 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6F57C935208FF8A800640680 /* ViewController.swift in Sources */,
+				6F57C945208FF8F300640680 /* Team.swift in Sources */,
+				6F57C935208FF8A800640680 /* TeamsViewController.swift in Sources */,
+				6F908701209096C70036AE97 /* Flags.swift in Sources */,
 				6F57C933208FF8A800640680 /* AppDelegate.swift in Sources */,
+				6F9086FF2090969D0036AE97 /* Match.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -272,6 +389,7 @@
 		};
 		6F57C942208FF8A800640680 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4D9BEA7A6CF1C0A6F6C5D28 /* Pods-Euro 2016.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -287,6 +405,7 @@
 		};
 		6F57C943208FF8A800640680 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3D6BFD6B2383DE2FEE94897E /* Pods-Euro 2016.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

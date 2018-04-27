@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>750538491681-hlfouos2ojkocpf6ia11olcf17g8beov.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.750538491681-hlfouos2ojkocpf6ia11olcf17g8beov</string>
+	<key>API_KEY</key>
+	<string>AIzaSyDZH0OAM7nCbwcKttylMGfHnvGOG5bmiHU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>750538491681</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.lhvan.Euro-2016</string>
+	<key>PROJECT_ID</key>
+	<string>euro-2016-e0cfa</string>
+	<key>STORAGE_BUCKET</key>
+	<string>euro-2016-e0cfa.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true></true>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false></false>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:750538491681:ios:1201f2617d0355a3</string>
+	<key>DATABASE_URL</key>
+	<string>https://euro-2016-e0cfa.firebaseio.com</string>
+</dict>
+</plist>
