@@ -115,7 +115,21 @@ extension TeamsViewController:UITableViewDataSource {
 
 extension TeamsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let stb = storyboard?.instantiateViewController(withIdentifier: "teamDetail")
+        navigationController?.pushViewController(stb!, animated: true)
+        
         print("Section: \(indexPath.section)")
         print("Row: \(indexPath.row)")
     }
 }
+
+
+
+
+
+
+
+
+
+
