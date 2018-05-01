@@ -17,21 +17,7 @@ class TeamsViewController: UIViewController {
     
     var dataList2: [String: [Team]] = [String: [Team]]()
     
-//    var dataList2: [String: [Team]] = [
-//        "A": [
-//            Team(name: "VietNam", point: 0, rank: 0),
-//            Team(name: "Lao", point: 0, rank: 0),
-//            Team(name: "Malay", point: 0, rank: 0),
-//            Team(name: "Singapore", point: 0, rank: 0)
-//        ],
-//        "B": [
-//            Team(name: "ThaiLan", point: 0, rank: 0),
-//            Team(name: "Campuchia", point: 0, rank: 0)
-//        ]
-//    ]
-    
     var dataList: [[String: [Team]]] = [[String: [Team]]]()
-//    var orderKeys: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,11 +26,12 @@ class TeamsViewController: UIViewController {
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let nibName = UINib(nibName: "TeamsTableViewCell", bundle: nil)
+        tableView.register(nibName, forCellReuseIdentifier: "teamCell")
     }
     
     func loadData(){
-        
-        
         
         let database = Database.database().reference()
         database.child("Groups").observe(.value) { (snap) in
@@ -74,7 +61,7 @@ class TeamsViewController: UIViewController {
     }
 }
 
-extension TeamsViewController:UITableViewDataSource, UITableViewDelegate {
+extension TeamsViewController:UITableViewDataSource {
     
     // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -109,11 +96,9 @@ extension TeamsViewController:UITableViewDataSource, UITableViewDelegate {
     
     // Cell for row at indexPath
     
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! TeamsTableViewCell
-        
         
         let key = groupName[indexPath.section] // get key at indexPath (A)
         let team = dataList[indexPath.section][key]![indexPath.row] // get team of key in data list
@@ -125,5 +110,12 @@ extension TeamsViewController:UITableViewDataSource, UITableViewDelegate {
         cell.point.text = "Điểm \(team.point)"
         
         return cell
+    }
+}
+
+extension TeamsViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("Section: \(indexPath.section)")
+        print("Row: \(indexPath.row)")
     }
 }

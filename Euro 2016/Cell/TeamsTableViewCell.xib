@@ -6,19 +6,101 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Avenir.ttc">
+            <string>Avenir-Heavy</string>
+        </array>
+    </customFonts>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="205" id="hLr-Bv-lfM" customClass="TeamsTableViewCell" customModule="Euro_2016" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="604" height="205"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="teamCell" rowHeight="72" id="hLr-Bv-lfM" customClass="TeamsTableViewCell" customModule="Euro_2016" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="231" height="72"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hLr-Bv-lfM" id="C48-NU-H9w">
-                <rect key="frame" x="0.0" y="0.0" width="604" height="204.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="231" height="71.5"/>
                 <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRM-Dq-zv2">
+                        <rect key="frame" x="0.0" y="0.0" width="231" height="69.5"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Banner-Albania" translatesAutoresizingMaskIntoConstraints="NO" id="JDo-vw-KVj">
+                                <rect key="frame" x="0.0" y="0.0" width="230" height="69.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="JDo-vw-KVj" secondAttribute="height" multiplier="660:200" id="emM-Q4-seR"/>
+                                </constraints>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Albania" translatesAutoresizingMaskIntoConstraints="NO" id="qSQ-81-sm9">
+                                <rect key="frame" x="7" y="6" width="58" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="qSQ-81-sm9" secondAttribute="height" multiplier="1:1" id="vSW-AP-k8b"/>
+                                </constraints>
+                            </imageView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SuJ-ub-8WM">
+                                <rect key="frame" x="72" y="3" width="149" height="65"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Albania" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wP5-4d-2RW">
+                                        <rect key="frame" x="0.0" y="0.0" width="149" height="41"/>
+                                        <fontDescription key="fontDescription" name="Avenir-Heavy" family="Avenir" pointSize="30"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" alpha="0.69999999999999996" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Điểm: 2" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g6D-iN-0lk">
+                                        <rect key="frame" x="0.0" y="41" width="149" height="24"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <color key="textColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="g6D-iN-0lk" firstAttribute="leading" secondItem="SuJ-ub-8WM" secondAttribute="leading" id="SCc-Cj-kUY"/>
+                                    <constraint firstAttribute="trailing" secondItem="wP5-4d-2RW" secondAttribute="trailing" id="UQd-fQ-akH"/>
+                                    <constraint firstItem="g6D-iN-0lk" firstAttribute="top" secondItem="wP5-4d-2RW" secondAttribute="bottom" id="bsG-rY-zCh"/>
+                                    <constraint firstAttribute="trailing" secondItem="g6D-iN-0lk" secondAttribute="trailing" id="iL5-Ya-Mf4"/>
+                                    <constraint firstAttribute="bottom" secondItem="g6D-iN-0lk" secondAttribute="bottom" id="rAS-UO-t1U"/>
+                                    <constraint firstItem="wP5-4d-2RW" firstAttribute="leading" secondItem="SuJ-ub-8WM" secondAttribute="leading" id="rLM-7h-VNv"/>
+                                    <constraint firstItem="wP5-4d-2RW" firstAttribute="top" secondItem="SuJ-ub-8WM" secondAttribute="top" id="vXU-yc-rRS"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.40000000600000002" green="0.80000001190000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="JDo-vw-KVj" secondAttribute="trailing" id="4qM-HO-c3O"/>
+                            <constraint firstAttribute="trailing" secondItem="SuJ-ub-8WM" secondAttribute="trailing" constant="10" id="6eD-pV-SZO"/>
+                            <constraint firstItem="JDo-vw-KVj" firstAttribute="leading" secondItem="VRM-Dq-zv2" secondAttribute="leading" id="8zK-QG-FFg"/>
+                            <constraint firstAttribute="bottom" secondItem="JDo-vw-KVj" secondAttribute="bottom" id="FFD-j8-qrt"/>
+                            <constraint firstItem="SuJ-ub-8WM" firstAttribute="leading" secondItem="qSQ-81-sm9" secondAttribute="trailing" constant="7" id="SvE-Ki-S4z"/>
+                            <constraint firstItem="qSQ-81-sm9" firstAttribute="leading" secondItem="VRM-Dq-zv2" secondAttribute="leading" constant="7" id="W4f-mx-G4m"/>
+                            <constraint firstItem="qSQ-81-sm9" firstAttribute="width" secondItem="VRM-Dq-zv2" secondAttribute="width" multiplier="1/4" id="XgP-Jc-hnE"/>
+                            <constraint firstItem="qSQ-81-sm9" firstAttribute="centerY" secondItem="VRM-Dq-zv2" secondAttribute="centerY" id="obn-ih-RTg"/>
+                            <constraint firstItem="JDo-vw-KVj" firstAttribute="top" secondItem="VRM-Dq-zv2" secondAttribute="top" id="xfa-L2-vsr"/>
+                            <constraint firstItem="SuJ-ub-8WM" firstAttribute="centerY" secondItem="VRM-Dq-zv2" secondAttribute="centerY" id="ynp-Yl-ezz"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="VRM-Dq-zv2" secondAttribute="trailing" id="73P-lU-tk6"/>
+                    <constraint firstAttribute="bottom" secondItem="VRM-Dq-zv2" secondAttribute="bottom" id="DXb-p2-gxp"/>
+                    <constraint firstItem="VRM-Dq-zv2" firstAttribute="top" secondItem="C48-NU-H9w" secondAttribute="top" id="LEZ-HF-ooE"/>
+                    <constraint firstItem="VRM-Dq-zv2" firstAttribute="leading" secondItem="C48-NU-H9w" secondAttribute="leading" id="bVw-RU-46B"/>
+                </constraints>
             </tableViewCellContentView>
-            <point key="canvasLocation" x="-129" y="131.5"/>
+            <connections>
+                <outlet property="banner" destination="JDo-vw-KVj" id="6Di-3b-zLs"/>
+                <outlet property="flag" destination="qSQ-81-sm9" id="Qcv-XO-nfb"/>
+                <outlet property="name" destination="wP5-4d-2RW" id="4Du-Dp-GLf"/>
+                <outlet property="point" destination="g6D-iN-0lk" id="2a9-Nd-PiD"/>
+            </connections>
+            <point key="canvasLocation" x="-479.5" y="65"/>
         </tableViewCell>
     </objects>
+    <resources>
+        <image name="Albania" width="100" height="100"/>
+        <image name="Banner-Albania" width="230" height="69"/>
+    </resources>
 </document>
