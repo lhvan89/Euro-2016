@@ -10,105 +10,120 @@ import UIKit
 import Firebase
 
 class TeamsViewController: UIViewController {
-    
-//    var ref: DatabaseReference!
-    
-    
-    
-    
+
     @IBOutlet weak var tableView: UITableView!
     
-    var dataList: [String: [Team]] = [
-        "A": [
-            Team(name: "VietNam", point: 0, rank: 0),
-            Team(name: "Lao", point: 0, rank: 0),
-            Team(name: "Malay", point: 0, rank: 0),
-            Team(name: "Singapore", point: 0, rank: 0)
-        ],
-        "B": [
-            Team(name: "ThaiLan", point: 0, rank: 0),
-            Team(name: "Campuchia", point: 0, rank: 0)
-        ]
-    ]
+    var groupName = ["A","B","C","D","E","F"]
     
-    var dataList2: [[String: [Team]]] = [[String: [Team]]]()
+    var dataList2: [String: [Team]] = [String: [Team]]()
     
-    //get list of keys (A,B,C,D)
-    var orderKeys: [String] = []
+//    var dataList2: [String: [Team]] = [
+//        "A": [
+//            Team(name: "VietNam", point: 0, rank: 0),
+//            Team(name: "Lao", point: 0, rank: 0),
+//            Team(name: "Malay", point: 0, rank: 0),
+//            Team(name: "Singapore", point: 0, rank: 0)
+//        ],
+//        "B": [
+//            Team(name: "ThaiLan", point: 0, rank: 0),
+//            Team(name: "Campuchia", point: 0, rank: 0)
+//        ]
+//    ]
+    
+    var dataList: [[String: [Team]]] = [[String: [Team]]]()
+//    var orderKeys: [String] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         loadData()
-
-        guard let flagName = Flags["France"] else { return }
-        print(flagName)
         
         tableView.dataSource = self
-        
-        //orderKeys = Array(dataList.keys.sorted())
-        orderKeys = dataList.keys.sorted(by: { (str1, str2) -> Bool in
-            return str1 < str2
-        })
+        tableView.delegate = self
     }
     
     func loadData(){
+        
+        
+        
         let database = Database.database().reference()
         database.child("Groups").observe(.value) { (snap) in
-            if let list = snap.value as? [String: AnyObject] {
-                let sortLits = list.sorted() {$0.0 < $1.0}
-                
-                for (groupName, teams) in sortLits {
-                    var teamList = [Team]()
-                    if let teamData = teams as? [String: [String: AnyObject]] {
-                        for (teamName, teamInfo) in teamData {
-                            guard let teamPoint = teamInfo["Point"] as? Int else { continue }
-                            guard let teamRank = teamInfo["Rank"] as? Int else { continue }
-                            let team = Team(name: teamName, point: teamPoint, rank: teamRank)
-                            teamList.append(team)
-                        }
-                    }
-                    if teamList.count > 0 {
-                        var groupAndTeam = ["Bảng \(groupName)" : teamList]
-                        self.dataList2.append(groupAndTeam)
-                    }
-                }
-                print(self.dataList2)
-                print(self.dataList2.count)
-            }
+            self.dataList.removeAll()
             
+            guard let list = snap.value as? [String: AnyObject] else { return }
+            let sortList = list.sorted { $0.0 < $1.0 }
+            
+            for (groupName, teams) in sortList {
+                
+                var teamList = [Team]()
+                
+                guard let teamData = teams as? [String: AnyObject] else { continue }
+                let sortTeam = teamData.sorted { $0.0 < $1.0 }
+                
+                for (teamName, teamInfo) in sortTeam {
+                    
+                    guard let teamPoint = teamInfo["Point"] as? Int else { continue }
+                    guard let teamRank = teamInfo["Rank"] as? Int else { continue }
+                    
+                    teamList.append(Team(name: teamName, point: teamPoint, rank: teamRank))
+                }
+                self.dataList.append([groupName : teamList])
+            }
+            self.tableView.reloadData()
         }
     }
 }
 
-extension TeamsViewController:UITableViewDataSource {
+extension TeamsViewController:UITableViewDataSource, UITableViewDelegate {
     
     // Number of sections
     func numberOfSections(in tableView: UITableView) -> Int {
-        return dataList2.count
+        return dataList.count
     }
     
-    // Title for header in section
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return orderKeys[section]
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        return 40.0
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let view: UIView = UIView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 50))
+        
+        let imageview = UIImageView(frame: CGRect(x: 0, y: 0, width: screenWidth, height: 50))
+        imageview.image = #imageLiteral(resourceName: "board")
+        view.addSubview(imageview)
+        
+        let lable = UILabel(frame: CGRect(x: 20, y: 0, width: screenWidth, height: 50))
+        lable.text = "Bảng \(groupName[section])"
+        lable.textColor = #colorLiteral(red: 1.0, green: 1.0, blue: 1.0, alpha: 1.0)
+        lable.font = UIFont(name: "Arial", size: 25.0)
+        view.addSubview(lable)
+        return view
     }
     
     // Number of rows in section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        let key = orderKeys[section]
-        return dataList[key]!.count
+        let key = groupName[section]
+        return dataList[section][key]!.count
     }
     
     // Cell for row at indexPath
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell{
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell")
+        let cell = tableView.dequeueReusableCell(withIdentifier: "teamCell") as! TeamsTableViewCell
         
-        let key = orderKeys[indexPath.section] // get key at indexPath (A)
-        let team = dataList[key]![indexPath.row] // get team of key in data list
         
-        cell?.textLabel?.text = team.name
+        let key = groupName[indexPath.section] // get key at indexPath (A)
+        let team = dataList[indexPath.section][key]![indexPath.row] // get team of key in data list
         
-        return cell!
+        cell.banner.image = UIImage(named: "Banner-\(team.name)")
+        cell.flag.image = UIImage(named: team.name)
+        cell.name.text = team.name
+        
+        cell.point.text = "Điểm \(team.point)"
+        
+        return cell
     }
 }
